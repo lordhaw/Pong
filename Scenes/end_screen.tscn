@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4pw5x7ns3cjm"]
+
+[ext_resource type="Script" uid="uid://b57te3vb62ca6" path="res://Scripts/winner_label.gd" id="1_gdxnu"]
+[ext_resource type="Script" uid="uid://c0g13p8ngav1l" path="res://Scripts/play_again.gd" id="2_8yanq"]
+[ext_resource type="Script" uid="uid://3mf0xntwfnui" path="res://Scripts/quit.gd" id="3_fi2y0"]
+[ext_resource type="PackedScene" uid="uid://bfmqg0fyhulk2" path="res://Scenes/score_ui.tscn" id="4_em7vc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4suit"]
+font_size = 90
+outline_size = 15
+outline_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdxnu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdxnu"]
+bg_color = Color(0.674424, 0.076576, 0.331269, 1)
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_em7vc"]
+bg_color = Color(0.67451, 0.0784314, 0.329412, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8yanq"]
+bg_color = Color(0.345388, 0.017211, 0.158206, 1)
+border_color = Color(0.228613, 0.00687636, 0.095184, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8yanq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqrt5"]
+bg_color = Color(0.67451, 0.0784314, 0.329412, 1)
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4suit"]
+bg_color = Color(0.67451, 0.0784314, 0.329412, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi2y0"]
+bg_color = Color(0.345098, 0.0156863, 0.156863, 1)
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[node name="End Screen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.407843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Winner Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Winner!"
+label_settings = SubResource("LabelSettings_4suit")
+horizontal_alignment = 1
+script = ExtResource("1_gdxnu")
+
+[node name="Play Again" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gdxnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gdxnu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_em7vc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8yanq")
+text = " Play Again "
+script = ExtResource("2_8yanq")
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8yanq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqrt5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4suit")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fi2y0")
+text = " Quit "
+script = ExtResource("3_fi2y0")
+
+[node name="Score UI" parent="VBoxContainer" instance=ExtResource("4_em7vc")]
+layout_mode = 2

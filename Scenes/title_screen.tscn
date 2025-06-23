@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwrjahtgvnd1r"]
+
+[ext_resource type="Script" uid="uid://sk4mvm3m0c68" path="res://Scripts/start_button.gd" id="1_klylv"]
+[ext_resource type="Script" uid="uid://d35tecthju43f" path="res://Scripts/start_button_2.gd" id="2_p3fck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1s85s"]
+font_size = 90
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1s85s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6p8y"]
+bg_color = Color(0.67451, 0.0784314, 0.329412, 1)
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak2if"]
+bg_color = Color(0.67451, 0.0784314, 0.329412, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig5kc"]
+bg_color = Color(0.345098, 0.0156863, 0.156863, 1)
+border_color = Color(0.227451, 0.00784314, 0.0941176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p3fck"]
+font_size = 25
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0117647, 0.0117647, 0.0117647, 0.666667)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pong!"
+label_settings = SubResource("LabelSettings_1s85s")
+horizontal_alignment = 1
+
+[node name="Start Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1s85s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v6p8y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak2if")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig5kc")
+text = "  1 Player  "
+script = ExtResource("1_klylv")
+
+[node name="Start Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1s85s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v6p8y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak2if")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig5kc")
+text = " 2 Players "
+script = ExtResource("2_p3fck")
+
+[node name="Instruction Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 379.0
+offset_right = 813.0
+offset_bottom = 490.0
+text = "- Use W/S keys for Player 1
+- Use Up/Down Arrow keys for Player 2"
+label_settings = SubResource("LabelSettings_p3fck")
